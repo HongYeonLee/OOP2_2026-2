@@ -17,6 +17,7 @@ public class HashMapTest {
 		hashMap.put("menu5", "물");
 		
 		//정렬안된 메뉴가 나옴
+		System.out.println("for-each로 출력하기");
 		for (String key : hashMap.keySet()) {
 			System.out.println(key + " => " + hashMap.get(key));
 		}
@@ -24,6 +25,7 @@ public class HashMapTest {
 		System.out.println("------------------------------------");
 		
 		//람다식으로 출력하기
+		System.out.println("람다식으로 출력하기");
 		hashMap.forEach((k, v) -> System.out.println(k + ":" + v));
 		
 		System.out.println("------------------------------------");
@@ -36,7 +38,7 @@ public class HashMapTest {
 		linkedHashMap.put("menu4", "카페라떼");
 		linkedHashMap.put("menu5", "물");
 		
-		 //정렬안된 메뉴가 나옴
+		 //정렬된 메뉴가 나옴
 		for (String key : linkedHashMap.keySet()) {
 			System.out.println(key + " => " + linkedHashMap.get(key));
 		}
