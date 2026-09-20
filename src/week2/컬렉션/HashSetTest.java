@@ -11,12 +11,15 @@ public class HashSetTest {
 	//출력용 generic 메소드, 클래스 생성없이 바로 부르려고 static 
 	public static <E> void show(Set<E> s) {
 		
+		System.out.println("for-each로 출력");
 		//for-each
 		for (E e: s) {
 			System.out.print(e + " ");
 		}
-		System.out.println("\n--------------------------");
 		
+		System.out.println();//줄바꿈
+		
+		System.out.println("iterator로 출력");
 		//iterator
 		Iterator<E> it = s.iterator();
 		while(it.hasNext()) {
@@ -24,10 +27,10 @@ public class HashSetTest {
 		}
 		System.out.println("\n--------------------------");
 		
+		 
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Hello World");
 		
 		//HashSet 만들고 add로 하나씩 넣기보다는 asList로 한번에 넣기
 		Set<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5));
@@ -36,12 +39,12 @@ public class HashSetTest {
 		Set<Integer> set4 = new HashSet<>(Arrays.asList(8, 9, 10, 11, 12));
 		Set<Integer> set5 = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
 	
-		//순서 상관없이 출력
-		set1.addAll(set2); // 1 ~ 7
-		set2.retainAll(set3); //교집합 5, 6, 7
-		set3.removeAll(set4); //set3 - set4 5, 6, 7
-		set4.removeAll(set3); //set4 - set3, 위에서 set3의 내용이 달라졌음 주의 8 ~ 12
-		set5.containsAll(set4); //부분집합 set5
+		//순서 상관없이 저장됨
+		set1.addAll(set2); // set1 + set2: 합집합, 1 ~ 7
+		set2.retainAll(set3); //set2와 set3의 교집합, 5, 6, 7
+		set3.removeAll(set4); //set3 - set4의 차집함, 5, 6, 7
+		set4.removeAll(set3); //set4 - set3의 차집합, 위에서 set3의 내용이 달라졌음 주의 8 ~ 12
+		set5.containsAll(set4); //set4가 set5의 부분집합인지 boolean 리턴
 		
 		show(set1);
 		show(set2);
@@ -49,9 +52,8 @@ public class HashSetTest {
 		show(set4);
 		show(set5);
 		
-		System.out.println("\n--------------------------");
-		
 		//람다식으로 출력하기
+		System.out.println("람다식으로 출력");
 		set1.forEach(s -> System.out.print(s + " "));
 		
 		System.out.println("\n--------------------------");
