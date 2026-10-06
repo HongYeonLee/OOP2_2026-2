@@ -28,7 +28,7 @@ public class 스레드테스트 {
 				
 		);
 		
-		t3.run();
+		t3.start();
 		
 		Thread t4 = new Thread(()->{
 			for (int i = 0; i < 100; i++) {
@@ -42,7 +42,7 @@ public class 스레드테스트 {
 			}
 		});
 		
-		t4.run();
+		t4.start();
 	}
 
 }
