@@ -10,7 +10,7 @@ public class MyFrame extends JFrame {
 	}
 	
 	public MyFrame(String str) {
-		this();
+		this(); // MyFrame() 호출
 		this.setTitle(str);
 	}
 	
