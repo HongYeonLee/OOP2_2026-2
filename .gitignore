@@ -29,3 +29,6 @@ replay_pid*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# JDBC
+/mysql-connector-j-26.10.0
